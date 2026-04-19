@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baby Shower Leonel | Evento</title>
+  <style>
+    /* Fondo de panal de abejas sútil */
+/* Fondo de panal de abejas - más notorio */
+/* Fondo de panal de abejas - tamaño pequeño */
+/* Fondo de panal de hexágonos perfectos */
+/* Fondo con imagen de panal real */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('imagenpanal.png');
+  background-repeat: repeat;
+  background-size: auto; /* o 80px 80px si quieres ajustar el tamaño */
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Asegura contenido por encima */
+.hero, .container, .footer {
+  position: relative;
+  z-index: 1;
+}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Georgia', 'Times New Roman', 'Palatino', serif;
+      background: #fefaf7;
+      color: #3e2a23;
+      line-height: 1.5;
+    }
+
+    /* ========== HERO CON IMAGEN ========== */
+  /* Hero con imagen PNG centrada y completa */
+/* Eliminar recuadro y fondo de la imagen */
+.imagen-portada {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  /* Eliminar sombra y borde */
+  box-shadow: none;
+  border-radius: 0;
+  /* Forzar transparencia (si la imagen tiene fondo sólido, esto no lo quita mágicamente) */
+  background: transparent;
+}
+
+/* Hero sin fondo, sin recuadro, sin nada */
+.hero {
+  background: transparent;
+  min-height: auto;
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  /* Eliminar cualquier fondo o sombra */
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+/* Eliminar cualquier recuadro blanco o sombra que pudiera haber */
+.invitation-card, .card-inner {
+  background: transparent;
+  box-shadow: none;
+}
+    .hero-content {
+      max-width: 800px;
+      padding: 2rem;
+    
+      backdrop-filter: blur(3px);
+      border-radius: 32px;
+    }
+
+    .hero-pre {
+      font-size: 1.2rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-weight: 300;
+    }
+
+    .hero-title {
+      font-size: 4.5rem;
+      font-weight: 700;
+      margin: 0.5rem 0;
+      text-shadow: 2px 2px 12px rgba(0,0,0,0.3);
+    }
+
+    .hero-baby {
+      font-size: 5rem;
+      font-weight: 800;
+      letter-spacing: 6px;
+      background: linear-gradient(135deg, #584b3a, #FFB88C);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      text-shadow: none;
+    }
+
+    .hero-date {
+      font-size: 1.3rem;
+      margin-top: 1rem;
+      font-weight: 500;
+    }
+
+    /* ========== SECCIONES ========== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #a56b48;
+      position: relative;
+    }
+
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 70px;
+      height: 3px;
+      background: #e2bc9f;
+      margin: 0.8rem auto 0;
+    }
+
+    /* Grid detalles */
+    .details-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .detail-card {
+      background: white;
+      border-radius: 28px;
+      padding: 2rem;
+      flex: 1;
+      min-width: 220px;
+      text-align: center;
+      box-shadow: 0 10px 25px -8px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+      border: 1px solid #f5e2d6;
+    }
+
+    .detail-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .detail-icon {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .detail-card h3 {
+      font-size: 1.6rem;
+      color: #c28962;
+      margin-bottom: 0.8rem;
+    }
+
+    .detail-card p {
+      font-size: 1rem;
+      color: #5f4030;
+    }
+
+    .address-box {
+      background: #fff6f0;
+      border-radius: 28px;
+      padding: 2rem;
+      text-align: center;
+      border: 1px dashed #e2bc9f;
+      margin: 2rem 0;
+    }
+
+    .address-box p {
+      font-size: 1.2rem;
+      margin: 0.5rem 0;
+    }
+
+    /* Botones tipo empresarial */
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+
+    .btn {
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      border-radius: 60px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background: #a56b48;
+      color: white;
+      box-shadow: 0 4px 10px rgba(165, 107, 72, 0.3);
+    }
+
+    .btn-primary:hover {
+      background: #88593c;
+      transform: scale(1.02);
+    }
+
+    .btn-secondary {
+      background: #25D366;
+      color: white;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
+    }
+
+    .btn-secondary:hover {
+      background: #1da851;
+      transform: scale(1.02);
+    }
+
+    /* Mapa responsive */
+    .map-container {
+      margin: 2rem 0;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 350px;
+      border: 0;
+    }
+
+    /* Footer */
+    .footer {
+      background: #f2e4db;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 2rem;
+      color: #7a5a48;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      .hero-baby {
+        font-size: 3rem;
+      }
+      .container {
+        padding: 2rem 1.2rem;
+      }
+      .section-title {
+        font-size: 1.8rem;
+      }
+      .btn-group {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .btn {
+        justify-content: center;
+      }
+    }
+
+    /* imagen de respaldo si no existe */
+    
+  </style>
+</head>
+<body>
+
+  <!-- HERO con imagen de fondo (asume image.png en la raíz) -->
+  <section class="hero">
+    <div class="hero-content">
+        <img src="image.png" alt="Baby Shower Leonel" class="imagen-portada">
+      <div class="hero-pre">Acompáñanos a celebrar el</div>
+      <h1 class="hero-title">Baby Shower de </h1>
+      <div class="hero-baby">"LEONEL"</div>
+      <div class="hero-date">📅 Sábado 25 de Abril · 19:30 hs</div>
+    </div>
+  </section>
+
+
+
+<style>
+  @keyframes meneito {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(5deg); }
+  }
+</style>
+
+  <!-- Contenido principal tipo landing -->
+  <div class="container">
+    <h2 class="section-title">Detalles del evento</h2>
+    <div class="details-grid">
+      <div class="detail-card">
+        <div class="detail-icon">🍽️</div>
+        <h3>Cena especial</h3>
+        <p>Una velada hermosa con menú diseñado para compartir en familia.</p>
+      </div>
+      <div class="detail-card">
+        <div class="detail-icon">📍</div>
+        <h3>Ubicación</h3>
+        <p>Barrio Caminero, Av. Marcelo Quiroga Nro 17, Santa Cruz</p>
+      </div>
+      <div class="detail-card">
+        <div class="detail-icon">🎁</div>
+        <h3>Lluvia de regalos</h3>
+        <p>Pooh dice: un regalo = mucho amor" – Para Leonel.</p>
+      </div>
+    </div>
+
+    <!-- Dirección destacada -->
+    <div class="address-box">
+      <p><strong>📍 BARRIO CAMINERO</strong></p>
+      <p>Av. Marcelo Quiroga Nro 17</p>
+      <p>Santa Cruz de la Sierra - Bolivia</p>
+      <p style="margin-top: 10px;">✨ Te esperamos a partir de las 19:30 para una cena inolvidable ✨</p>
+    </div>
+
+    <!-- Botones CTA empresariales -->
+    <div class="btn-group">
+      <a href="https://maps.app.goo.gl/2Sa2B3xa1LvY1w7e8" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+        🗺️ Ver ubicación en Google Maps
+      </a>
+      <a href="https://wa.me/59160817621?text=Hola%2C%20confirmo%20mi%20asistencia%20al%20Baby%20Shower%20de%20Leonel%20%F0%9F%8E%89" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+        💬 Confirmar asistencia por WhatsApp
+      </a>
+    </div>
+
+    <!-- Mapa incrustado profesional -->
+    <div class="map-container">
+     
+      <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1892.6719204000144!2d-63.19990824308693!3d-17.85189973316023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDUxJzA2LjMiUyA2M8KwMTEnNTkuNSJX!5e1!3m2!1ses!2sbo!4v1776573844806!5m2!1ses!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>¡Te esperamos para celebrar juntos la llegada de Leonel! 🎈👶</p>
+    <p style="margin-top: 8px; font-size: 0.8rem;">Baby Shower · 25 de Abril · 19:30 hs</p>
+  </footer>
+
+    <!-- Reproductor de música oculto -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="audio.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Botón flotante para controlar música -->
+  <button id="musicToggle" style="position: fixed; bottom: 25px; right: 25px; background: #a56b48; color: white; border: none; border-radius: 50%; width: 55px; height: 55px; font-size: 24px; cursor: pointer; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center;">
+    🔊
+  </button>
+
+<script>
+  const audio = document.getElementById('bgMusic');
+  const musicBtn = document.getElementById('musicToggle');
+
+  audio.volume = 0.3;
+  audio.muted = true;
+
+  // NO intentar autoplay al cargar
+  // Esperamos el primer clic del usuario en ANY lugar
+  function iniciarMusica() {
+    audio.play().then(() => {
+      console.log("Música iniciada");
+      musicBtn.innerHTML = '🔊';
+    }).catch(e => console.log("Error:", e));
+    // Remover el evento después del primer clic
+    document.removeEventListener('click', iniciarMusica);
+    document.removeEventListener('touchstart', iniciarMusica);
+  }
+
+  // Escuchar el primer clic o toque del usuario
+  document.addEventListener('click', iniciarMusica);
+  document.addEventListener('touchstart', iniciarMusica);
+
+  // Botón para mute/unmute
+  musicBtn.addEventListener('click', (e) => {
+    e.stopPropagation(); // Evita que el clic en el botón dispare el evento de nuevo
+    if (audio.muted) {
+      audio.muted = false;
+      musicBtn.innerHTML = '🔊';
+    } else {
+      audio.muted = true;
+      musicBtn.innerHTML = '🔇';
+    }
+  });
+</script>
+<!-- Abejita voladora -->
+<div id="abejita" style="position: fixed; z-index: 999; pointer-events: none; font-size: 32px; filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));">
+  🐝🍯
+</div>
+
+<script>
+  const abeja = document.getElementById('abejita');
+  let x = Math.random() * window.innerWidth;
+  let y = Math.random() * window.innerHeight;
+  let dx = (Math.random() * 1.5) + 0.8;
+  let dy = (Math.random() * 1.5) + 0.8;
+
+  function moverAbeja() {
+    x += dx;
+    y += dy;
+
+    // Rebote en los bordes
+    if (x + 40 > window.innerWidth || x < 0) {
+      dx = -dx;
+      x = Math.min(Math.max(x, 0), window.innerWidth - 40);
+    }
+    if (y + 40 > window.innerHeight || y < 0) {
+      dy = -dy;
+      y = Math.min(Math.max(y, 0), window.innerHeight - 40);
+    }
+
+    abeja.style.left = x + 'px';
+    abeja.style.top = y + 'px';
+    requestAnimationFrame(moverAbeja);
+  }
+
+  // Ajustar posición inicial al redimensionar
+  window.addEventListener('resize', () => {
+    x = Math.min(x, window.innerWidth - 40);
+    y = Math.min(y, window.innerHeight - 40);
+  });
+
+  moverAbeja();
+</script>
+</body>
+</html>
